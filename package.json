@@ -1,0 +1,41 @@
+{
+  "name": "watercooler",
+  "version": "0.0.0",
+  "author": "Markus Ast <npm.m@rkusa.st>",
+  "description": "",
+  "keywords": [],
+  "main": "lib/",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "debug": "^1.0.2",
+    "dgram-stream": "^0.2.0",
+    "plasmid": "^0.0.0",
+    "shortid": "^2.0.1",
+    "stream-combiner": "^0.2.1"
+  },
+  "devDependencies": {
+    "blessed": "0.0.37",
+    "chai": "^1.9.1",
+    "eslint": "^0.6.2",
+    "gulp": "^3.8.5",
+    "gulp-eslint": "^0.1.7",
+    "gulp-mocha": "^0.4.1"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "bugs": {
+    "url": "https://github.com/rkusa/watercooler/issues"
+  },
+  "homepage": "https://github.com/rkusa/watercooler",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rkusa/watercooler.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  }
+}
