@@ -2,6 +2,10 @@
 
 ... is going to be a decentralized solution for cluster membership, failure detection, and service coordination.
 
+[![NPM][npm]](https://npmjs.org/package/watercooler)
+[![Dependency Status][dependencies]](https://david-dm.org/rkusa/watercooler)
+[![Build Status][travis]](http://travis-ci.org/rkusa/watercooler)
+
 ## MIT License
 
 Copyright (c) 2014 Markus Ast
@@ -11,3 +15,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+[npm]: http://img.shields.io/npm/v/watercooler.svg?style=flat
+[dependencies]: http://img.shields.io/gemnasium/rkusa/watercooler.svg?style=flat
+[travis]: http://img.shields.io/travis/rkusa/watercooler.svg?style=flat

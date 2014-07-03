@@ -13,7 +13,7 @@ Options:\n\
 "
 
 var opts = docopt(doc)
-console.log(opts)
+// console.log(opts)
 
 var frat = require('../')
 var node = new frat.Node({
