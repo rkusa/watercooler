@@ -129,6 +129,8 @@ screen.render()
 
 node.listen(port, function() {
   if (opts['--join']) {
-    node.gossip({ port: parseInt(opts['--join'], 10) })
+    node.join(parseInt(opts['--join'], 10), function(err) {
+      if (err) throw err
+    })
   }
 })

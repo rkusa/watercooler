@@ -13,6 +13,7 @@
     "dgram-stream": "^0.2.0",
     "plasmid": "^0.0.0",
     "plasmid-events": "^0.1.0",
+    "retry": "^0.6.1",
     "shortid": "^2.0.1",
     "stream-combiner": "^0.2.1"
   },
