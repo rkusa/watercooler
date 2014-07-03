@@ -30,7 +30,7 @@ var screen = blessed.screen()
 var box = blessed.box({
   top: 0,
   left: 0,
-  width: '100%',
+  right: 26,
   height: 'shrink',
   content: 'Id: {bold}' + node.id + '{/bold}, Port: {bold}' + port + '{/bold}',
   tags: true,
@@ -42,11 +42,11 @@ screen.append(box)
 
 var progressBar = blessed.progressbar({
   orientation: 'horizontal',
-  shrink: true,
   filled: 0,
   left: 0,
-  top: 2,
-  width: '100%',
+  right: 26,
+  top: 1,
+  height: 1,
   style: {
     bar: {
       bg: 'blue'
@@ -72,9 +72,10 @@ node.gossip = function(peer, isResponse) {
 }
 
 var log = blessed.list({
-  top: 4,
+  top: 2,
+  padding: 0,
   left: 0,
-  shrink: 'grow',
+  right: 26,
   tags: true,
   style: {
     fg: 'white'
@@ -95,10 +96,10 @@ debug.log = function() {
 }
 
 var peerList = blessed.list({
-  top: 4,
+  top: 0,
   right: 0,
   width: 26,
-  height: 'shrink',
+  height: '60%',
   tags: true,
   style: {
     fg: 'white'
@@ -118,6 +119,35 @@ screen.append(peerList)
 
 node.on('join', function(peer) {
   peerList.add('[' + peer.host + ']:' + peer.port)
+  screen.render()
+})
+
+var downedList = blessed.list({
+  bottom: 0,
+  right: 0,
+  width: 26,
+  height: '40%',
+  tags: true,
+  style: {
+    fg: 'white'
+  },
+  border: {
+    type: 'line'
+  },
+  mouse: true,
+  keys: true,
+  vi: true
+})
+downedList.prepend(new blessed.Text({
+  left: 2,
+  content: ' Down '
+}))
+screen.append(downedList)
+
+node.on('down', function(peer) {
+  var str = '[' + peer.host + ']:' + peer.port
+  peerList.removeItem(str)
+  downedList.add(str)
   screen.render()
 })
 
