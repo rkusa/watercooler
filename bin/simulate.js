@@ -5,18 +5,19 @@ if (!process.env.DEBUG) process.env.DEBUG = '*'
 
 var docopt = require('docopt').docopt
 var doc ="\
-Usage: simulate.js.js <port> [--join=<join>] [--id=<id>] [--rate=<rate>]\n\
+Usage: simulate.js.js <port> [--join=<join>] [--id=<id>] [--rate=<rate>] [--host=<host>]\n\
 \n\
 Options:\n\
   --id=<id>       The node's id.\n\
   --rate=<rate>   The gossip rate (per minute) [default: 12].\n\
+  --host=<host>   The machines hostname.\n\
 "
 
 var opts = docopt(doc)
 // console.log(opts)
 
-var frat = require('../')
-var node = new frat.Node({
+var watercooler = require('../')
+var node = new watercooler.Node({
   id: opts['--id'],
   gossipRate: parseInt(opts['--rate'], 10)
 })
@@ -63,10 +64,11 @@ setInterval(function() {
 }, (interval - 1000) / 100)
 
 var gossip = node.gossip
-node.gossip = function() {
+node.gossip = function(peer, isResponse) {
+  gossip.apply(node, arguments)
+  if (isResponse) return
   progressBar.setProgress(progress = 0)
   screen.render()
-  gossip.apply(node, arguments)
 }
 
 var log = blessed.list({
@@ -115,7 +117,7 @@ peerList.prepend(new blessed.Text({
 screen.append(peerList)
 
 node.on('join', function(peer) {
-  peerList.add('[' + peer.address + ']:' + peer.port)
+  peerList.add('[' + peer.host + ']:' + peer.port)
   screen.render()
 })
 
@@ -127,7 +129,7 @@ screen.key(['escape', 'q', 'C-c'], function(ch, key) {
 // Render the screen.
 screen.render()
 
-node.listen(port, function() {
+node.listen(port, opts['--host'], function() {
   if (opts['--join']) {
     node.join(parseInt(opts['--join'], 10), function(err) {
       if (err) throw err
