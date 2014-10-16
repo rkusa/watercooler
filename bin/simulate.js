@@ -151,6 +151,13 @@ node.on('down', function(peer) {
   screen.render()
 })
 
+node.on('alive', function(peer) {
+  var str = '[' + peer.host + ']:' + peer.port
+  downedList.removeItem(str)
+  peerList.add(str)
+  screen.render()
+})
+
 // Quit on Escape, q, or Control-C.
 screen.key(['escape', 'q', 'C-c'], function(ch, key) {
   return process.exit(0)

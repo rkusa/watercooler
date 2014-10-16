@@ -6,6 +6,13 @@
 [![Dependency Status][dependencies]](https://david-dm.org/rkusa/watercooler)
 [![Build Status][travis]](http://travis-ci.org/rkusa/watercooler)
 
+## Usage
+
+```bash
+./bin/simulate.js 4001 --id 1 --host=alice --rate 12
+./bin/simulate.js 4002 --id 2 --host=alice --join 4001 --rate 12
+```
+
 ## MIT License
 
 Copyright (c) 2014 Markus Ast
@@ -17,5 +24,5 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 [npm]: http://img.shields.io/npm/v/watercooler.svg?style=flat
-[dependencies]: http://img.shields.io/gemnasium/rkusa/watercooler.svg?style=flat
+[dependencies]: http://img.shields.io/david/rkusa/watercooler.svg?style=flat
 [travis]: http://img.shields.io/travis/rkusa/watercooler.svg?style=flat

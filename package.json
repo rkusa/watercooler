@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "afd": "^0.2.7",
-    "debug": "^1.0.2",
+    "debug": "^2.1.0",
     "dgram-stream": "^0.2.0",
     "plasmid": "^0.0.0",
     "plasmid-events": "^0.1.0",
