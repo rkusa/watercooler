@@ -15,7 +15,7 @@
     "plasmid": "rkusa/plasmid",
     "plasmid-events": "^0.1.0",
     "plasmid-heartbeat": "^0.1.0",
-    "retry": "^0.9.0",
+    "retry": "^0.8.0",
     "shortid": "^2.2.4",
     "stream-combiner": "^0.2.2"
   },
