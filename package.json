@@ -14,7 +14,7 @@
     "dgram-stream": "^0.2.0",
     "plasmid": "rkusa/plasmid",
     "plasmid-events": "^0.1.0",
-    "plasmid-heartbeat": "^0.1.0",
+    "plasmid-heartbeat": "github:rkusa/plasmid-heartbeat",
     "retry": "^0.8.0",
     "shortid": "^2.2.4",
     "stream-combiner": "^0.2.2"
